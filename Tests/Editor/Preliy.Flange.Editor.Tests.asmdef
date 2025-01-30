@@ -1,0 +1,28 @@
+{
+    "name": "Preliy.Flange.Editor.Tests",
+    "rootNamespace": "Preliy.Flange.Editor.Tests",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Unity.Mathematics",
+        "Preliy.Flange",
+        "Preliy.Flange.Editor",
+        "R3.Unity"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "R3.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Preliy.Flange.Editor",
+    "rootNamespace": "Preliy.Flange.Editor",
+    "references": [
+        "GUID:9d65667f77399154faa5865980010a4a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

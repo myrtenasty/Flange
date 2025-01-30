@@ -1,0 +1,45 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/com.preliy.flange/Editor/Resources/USS/Inspector.uss?fileID=7433441132597879392&amp;guid=7e1e6f12710adc64dafefcbdd6cb1a07&amp;type=3#Inspector" />
+    <ui:VisualElement>
+        <ui:Label tabindex="-1" text="Mechanical configuration isn&apos;t valid!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="empty" style="height: 100px; -unity-text-align: middle-center;" />
+        <ui:VisualElement name="control" style="flex-grow: 0;">
+            <ui:VisualElement name="joints" class="container">
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Label text="Joints" display-tooltip-when-elided="true" class="container-label" />
+                    <ui:VisualElement name="VisualElement" style="flex-direction: row;">
+                        <ui:Button text="Save" display-tooltip-when-elided="true" name="save" tooltip="Save as new home position" />
+                        <ui:Button text="Home" display-tooltip-when-elided="true" name="home" tooltip="Reset joints to home values" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="cartesian" class="container">
+                <ui:Label text="Cartesian" display-tooltip-when-elided="true" class="headerMiddle container-label" style="margin-left: 3px;" />
+                <ui:IntegerField label="Tool" value="0" name="tool" />
+                <ui:IntegerField label="Frame" value="0" name="frame" />
+                <ui:VisualElement style="border-left-color: rgb(127, 214, 252); border-right-color: rgb(127, 214, 252); border-top-color: rgb(127, 214, 252); border-bottom-color: rgb(127, 214, 252); border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; margin-left: 3px; margin-right: 3px; margin-top: 3px; margin-bottom: 3px; padding-left: 3px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">
+                    <ui:Label text="Frame &gt; TCP" display-tooltip-when-elided="true" class="header" style="margin-left: 3px;" />
+                    <uie:Vector3Field label="Position [mm]" name="position" />
+                    <uie:Vector3Field label="Rotation [deg]" name="rotation" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column; justify-content: space-between;">
+                    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:TextField picking-mode="Ignore" label="Configuration" value="[]" readonly="true" name="configuration" style="flex-shrink: 0; flex-grow: 1;" />
+                        <ui:Button text="Select" display-tooltip-when-elided="true" name="configurationSelect" tooltip="Edit actual robot configuration" />
+                    </ui:VisualElement>
+                    <ui:Toggle label="Show Turn" name="configurationTurn" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="references" class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="References" display-tooltip-when-elided="true" class="container-label" />
+        <uie:PropertyField binding-path="_tools" name="tools" />
+        <uie:PropertyField binding-path="_frames" name="userReferenceFrames" />
+        <ui:Foldout text="Mechanical Units" name="mechanicalUnits">
+            <uie:ObjectField label="Robot" name="robot" type="Preliy.Flange.Robot, Preliy.Flange" allow-scene-objects="true" binding-path="_mechanicalGroup._robot" />
+            <uie:ObjectField label="Base" name="base" type="Preliy.Flange.MechanicalUnit, Preliy.Flange" allow-scene-objects="true" binding-path="_mechanicalGroup._baseMechanicalUnit" />
+            <uie:PropertyField name="external" binding-path="_mechanicalGroup._externalMechanicalUnits" label="External" />
+        </ui:Foldout>
+    </ui:VisualElement>
+    <ui:VisualElement name="sequence" class="container" style="flex-grow: 1;" />
+</ui:UXML>

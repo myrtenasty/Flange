@@ -1,0 +1,24 @@
+{
+  "name": "com.preliy.flange",
+  "displayName": "Flange",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "unityRelease": "5f1",
+  "description": "Virtual robot controller",
+  "author": {
+    "name": "Preliy",
+    "email": "preliyex@gmail.com"
+  },
+  "keywords": [
+    "Industrial",
+    "Robot",
+    "Kinamatic"
+  ],
+  "samples": [
+    {
+      "displayName": "Demo - Basic",
+      "description": "Basic demo scene",
+      "path": "Samples~/Demo"
+    }
+  ]
+}

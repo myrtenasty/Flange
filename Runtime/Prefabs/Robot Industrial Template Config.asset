@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14633626ba5d44ab10051ee5c60c22, type: 3}
+  m_Name: Robot Industrial Template Config
+  m_EditorClassIdentifier: 
+  SolverType: 0
+  FrameConfig:
+  - Name: Frame_0
+    Alpha: 0
+    A: 0
+    D: 0
+    Theta: 0
+  - Name: Frame_1
+    Alpha: 0
+    A: 0
+    D: 0.75
+    Theta: 0
+  - Name: Frame_2
+    Alpha: -90
+    A: 0.36
+    D: 0
+    Theta: -90
+  - Name: Frame_3
+    Alpha: 0
+    A: 1.25
+    D: 0
+    Theta: 0
+  - Name: Frame_4
+    Alpha: -90
+    A: 0.1
+    D: 1.5
+    Theta: 0
+  - Name: Frame_5
+    Alpha: 90
+    A: 0
+    D: 0
+    Theta: 0
+  - Name: Frame_6
+    Alpha: -90
+    A: 0
+    D: 0
+    Theta: 0
+  - Name: Frame_7
+    Alpha: 0
+    A: 0
+    D: 0.3
+    Theta: 0
+  JointConfig:
+  - Name: Joint_0
+    Type: 0
+    Limits: {x: -180, y: 180}
+    Offset: 0
+    Factor: 1
+    SpeedMax: 100
+    AccMax: 200
+  - Name: Joint_1
+    Type: 0
+    Limits: {x: -180, y: 180}
+    Offset: 0
+    Factor: 1
+    SpeedMax: 100
+    AccMax: 200
+  - Name: Joint_2
+    Type: 0
+    Limits: {x: -180, y: 180}
+    Offset: 0
+    Factor: 1
+    SpeedMax: 100
+    AccMax: 200
+  - Name: Joint_3
+    Type: 0
+    Limits: {x: -180, y: 180}
+    Offset: 0
+    Factor: 1
+    SpeedMax: 100
+    AccMax: 200
+  - Name: Joint_4
+    Type: 0
+    Limits: {x: -180, y: 180}
+    Offset: 0
+    Factor: 1
+    SpeedMax: 100
+    AccMax: 200
+  - Name: Joint_5
+    Type: 0
+    Limits: {x: -180, y: 180}
+    Offset: 0
+    Factor: 1
+    SpeedMax: 100
+    AccMax: 200
