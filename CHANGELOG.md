@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/Preliy/Flange/compare/v1.0.0...v1.0.1) (2025-02-13)
+
+
+### Bug Fixes
+
+* **readme:** typos ([4f4df84](https://github.com/Preliy/Flange/commit/4f4df84ada38293e232f08af2cd548732c487ed4))
+* **samples:** TargetFollower is now in update loop. Running also in Editor ([8efe15f](https://github.com/Preliy/Flange/commit/8efe15fc5399de88be5d3dc8e6b26a2c52aa0ebe))
+
 # 1.0.0 (2025-01-30)
 
 
