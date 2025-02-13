@@ -30,8 +30,6 @@ namespace Preliy.Flange
         
         [Header("Settings")]
         [SerializeField]
-        private bool _runInEditor;
-        [SerializeField]
         private bool _showErrorMassage;
 
         [HideInInspector]
@@ -45,21 +43,8 @@ namespace Preliy.Flange
 
         private void Update()
         {
-            if (!Application.isPlaying && _runInEditor)
-            {
-                _target.Value = transform.GetMatrix();
-            }
-        }
-
-        private void OnAnimatorMove()
-        {
             _target.Value = transform.GetMatrix();
         }
-
-        // private void OnValidate()
-        // {
-        //     _target.Value = transform.GetMatrix();
-        // }
 
         private void OnDisable()
         {
