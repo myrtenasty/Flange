@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/Preliy/Flange/compare/v1.0.1...v1.0.2) (2025-03-06)
+
+
+### Bug Fixes
+
+* frame config tooltip ([717b391](https://github.com/Preliy/Flange/commit/717b391706bd2299c926402588bb893ad130db00))
+* joint config tooltip ([c1a180c](https://github.com/Preliy/Flange/commit/c1a180c0a91f56e78489eeda088fde4106413ef8))
+
 ## [1.0.1](https://github.com/Preliy/Flange/compare/v1.0.0...v1.0.1) (2025-02-13)
 
 
