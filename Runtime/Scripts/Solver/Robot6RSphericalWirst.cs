@@ -19,7 +19,7 @@ namespace Preliy.Flange
         private readonly static Matrix4x4 T6G = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, -90, 0), Vector3.one);
        
         private Vector4 _p65;
-        private float _l1, _l2, _delta;
+        private float _link1, _link2, _link2Delta, _theta0Offset, _p05XZLength;
         private float _x, _y, _l, _alpha, _beta, _gamma;
         private Matrix4x4 _t01, _t12, _t23,_t34, _t03, _t36, _target;
         private Vector4 _p05;
@@ -74,35 +74,39 @@ namespace Preliy.Flange
             var solutionIndex = Clamp(configuration.Index, 0, DEFAULT_SOLUTIONS_COUNT - 1);
             
             _p65 = new Vector4(0, -_frames[6].Config.D, 0, 1);
-            _l1 = _frames[2].Config.A;
-            _l2 = Sqrt(_frames[4].Config.D * _frames[4].Config.D + _frames[3].Config.A * _frames[3].Config.A);
-            _delta = Atan2(_frames[3].Config.A, _frames[4].Config.D);
+            _link1 = _frames[2].Config.A;
+            _link2 = Sqrt(_frames[4].Config.D * _frames[4].Config.D + _frames[3].Config.A * _frames[3].Config.A);
+            _link2Delta = Atan2(_frames[3].Config.A, _frames[4].Config.D);
             
             //NOTE: Original calculation is target = target * _flangeOffset * _t6G.inverse. Was simplified by target *= _t6G
             target *= T6G;
             
             _p05 = target * _p65;
+
+            //NOTE: Offset on face view (typical for Stäubli)
+            _p05XZLength = Sqrt(_p05.x * _p05.x + _p05.z * _p05.z);
+            _theta0Offset = Asin(_frames[3].Config.D / _p05XZLength);
             
             _theta[0] = Atan2(-_p05.x, _p05.z);
             if (float.IsNaN(_theta[0])) _theta[0] = 0;
-            _theta[0] = solutionIndex < 4 ? _theta[0] : _theta[0] + PI;
+            _theta[0] = solutionIndex < 4 ? _theta[0] - _theta0Offset : _theta[0] + PI + _theta0Offset;
 
             _x = _p05.z * Cos(_theta[0]) - _p05.x * Sin(_theta[0]) - _frames[1].Config.A;
             _y = _p05.y - _frames[1].Config.D;
             _l = Sqrt(_x * _x + _y * _y);
-            _alpha = Acos((_l1 * _l1 + _l2 * _l2 - _l * _l) / (2 * _l1 * _l2));
-            _beta = Acos((_l1 * _l1 - _l2 * _l2 + _l * _l) / (2 * _l1 * _l));
+            _alpha = Acos((_link1 * _link1 + _link2 * _link2 - _l * _l) / (2 * _link1 * _link2));
+            _beta = Acos((_link1 * _link1 - _link2 * _link2 + _l * _l) / (2 * _link1 * _l));
             _gamma = Atan2(_y, _x);
 
             if (InverseIndex.Contains(solutionIndex))
             {
                 _theta[1] = PI * 0.5f - _gamma + _beta;
-                _theta[2] = PI * 0.5f + _delta + _alpha - 2 * PI;
+                _theta[2] = PI * 0.5f + _link2Delta + _alpha - 2 * PI;
             }
             else
             {
                 _theta[1] = PI * 0.5f - _gamma - _beta;
-                _theta[2] = PI * 0.5f + _delta - _alpha;
+                _theta[2] = PI * 0.5f + _link2Delta - _alpha;
             }
 
             _t01 = HomogeneousMatrix.Create(_frames[1].Config, _joints[0].Config, _theta[0] * Rad2Deg);
