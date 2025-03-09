@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Preliy/Flange/compare/v1.0.2...v1.0.3) (2025-03-09)
+
+
+### Bug Fixes
+
+* **Robot6RSphericalWrist:** offset between the base and joint 4,5,6 ([f8a6e24](https://github.com/Preliy/Flange/commit/f8a6e2450bb070292d4dd0a779fcfc9bb8bb68f6))
+
 ## [1.0.2](https://github.com/Preliy/Flange/compare/v1.0.1...v1.0.2) (2025-03-06)
 
 
