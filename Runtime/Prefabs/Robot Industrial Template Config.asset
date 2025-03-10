@@ -12,88 +12,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a14633626ba5d44ab10051ee5c60c22, type: 3}
   m_Name: Robot Industrial Template Config
   m_EditorClassIdentifier: 
-  SolverType: 0
-  FrameConfig:
-  - Name: Frame_0
-    Alpha: 0
-    A: 0
-    D: 0
-    Theta: 0
-  - Name: Frame_1
-    Alpha: 0
-    A: 0
-    D: 0.75
-    Theta: 0
-  - Name: Frame_2
-    Alpha: -90
-    A: 0.36
-    D: 0
-    Theta: -90
-  - Name: Frame_3
-    Alpha: 0
-    A: 1.25
-    D: 0
-    Theta: 0
-  - Name: Frame_4
-    Alpha: -90
-    A: 0.1
-    D: 1.5
-    Theta: 0
-  - Name: Frame_5
-    Alpha: 90
-    A: 0
-    D: 0
-    Theta: 0
-  - Name: Frame_6
-    Alpha: -90
-    A: 0
-    D: 0
-    Theta: 0
-  - Name: Frame_7
-    Alpha: 0
-    A: 0
-    D: 0.3
-    Theta: 0
-  JointConfig:
-  - Name: Joint_0
-    Type: 0
-    Limits: {x: -180, y: 180}
-    Offset: 0
-    Factor: 1
-    SpeedMax: 100
-    AccMax: 200
-  - Name: Joint_1
-    Type: 0
-    Limits: {x: -180, y: 180}
-    Offset: 0
-    Factor: 1
-    SpeedMax: 100
-    AccMax: 200
-  - Name: Joint_2
-    Type: 0
-    Limits: {x: -180, y: 180}
-    Offset: 0
-    Factor: 1
-    SpeedMax: 100
-    AccMax: 200
-  - Name: Joint_3
-    Type: 0
-    Limits: {x: -180, y: 180}
-    Offset: 0
-    Factor: 1
-    SpeedMax: 100
-    AccMax: 200
-  - Name: Joint_4
-    Type: 0
-    Limits: {x: -180, y: 180}
-    Offset: 0
-    Factor: 1
-    SpeedMax: 100
-    AccMax: 200
-  - Name: Joint_5
-    Type: 0
-    Limits: {x: -180, y: 180}
-    Offset: 0
-    Factor: 1
-    SpeedMax: 100
-    AccMax: 200
+  _frames:
+  - _name: Base
+    _alpha: 0
+    _a: 0
+    _d: 0
+    _theta: 0
+  - _name: Joint_1
+    _alpha: -1.5707964
+    _a: 0.32
+    _d: 0.78
+    _theta: 0
+  - _name: Joint_2
+    _alpha: 0
+    _a: 1.135
+    _d: 0
+    _theta: -1.5707964
+  - _name: Joint_3
+    _alpha: -1.5707964
+    _a: 0.2
+    _d: 0
+    _theta: 0
+  - _name: Joint_4
+    _alpha: -1.5707964
+    _a: 0
+    _d: 1.1825
+    _theta: 0
+  - _name: Joint_5
+    _alpha: 1.5707964
+    _a: 0
+    _d: 0
+    _theta: 0
+  - _name: Joint_6
+    _alpha: 0
+    _a: 0
+    _d: 0.35
+    _theta: 0
+  - _name: Flange
+    _alpha: 0
+    _a: 0
+    _d: 0
+    _theta: 3.1415927
+  _joints:
+  - _name: Joint_1
+    _type: 0
+    _limits: {x: -170, y: 170}
+    _offset: 0
+    _factor: 1
+    _speedMax: 100
+    _accMax: 1000
+  - _name: Joint_2
+    _type: 0
+    _limits: {x: -65, y: 85}
+    _offset: 0
+    _factor: 1
+    _speedMax: 90
+    _accMax: 1000
+  - _name: Joint_3
+    _type: 0
+    _limits: {x: -180, y: 70}
+    _offset: 0
+    _factor: 1
+    _speedMax: 90
+    _accMax: 1000
+  - _name: Joint_4
+    _type: 0
+    _limits: {x: -300, y: 300}
+    _offset: 0
+    _factor: 1
+    _speedMax: 170
+    _accMax: 1000
+  - _name: Joint_5
+    _type: 0
+    _limits: {x: -120, y: 120}
+    _offset: 0
+    _factor: -1
+    _speedMax: 120
+    _accMax: 1000
+  - _name: Joint_6
+    _type: 0
+    _limits: {x: -370, y: 370}
+    _offset: 0
+    _factor: 1
+    _speedMax: 210
+    _accMax: 1000
+  _cartesianLimit:
+    _linearSpeed: 0
+    _linearAcc: 0
+    _rotationSpeed: 0
+    _rotationAcc: 0
