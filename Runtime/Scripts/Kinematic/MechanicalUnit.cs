@@ -264,6 +264,8 @@ namespace Preliy.Flange
                 {
                     _joints[i].Config = config.Joints[i];
                 }
+                
+                EditorUtility.SetDirty(this);
             }
             catch (Exception exception)
             {
