@@ -99,6 +99,10 @@ namespace Preliy.Flange
 
                 _robotJoints = _joints.Take(_robot.Joints.Count).ToList();
                 _externalJoints = _joints.Skip(_robot.Joints.Count).ToList();
+
+                _jointState.RobJoint.Value = _robotJoints.GetJointValues();
+                _jointState.ExtJoint.Value = _externalJoints.GetJointValues();
+                
                 _isValid = true;
                 OnValidateAction?.Invoke();
             }

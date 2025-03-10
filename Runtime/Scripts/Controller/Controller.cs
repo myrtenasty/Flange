@@ -51,6 +51,7 @@ namespace Preliy.Flange
         private void OnEnable()
         {
             MechanicalGroup.OnEnable();
+            OnValidate();
             _poseObserver = new PoseObserver(this);
             
             _cancellationTokenSource?.Dispose();
