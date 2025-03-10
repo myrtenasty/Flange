@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/Preliy/Flange/compare/v1.0.3...v1.0.4) (2025-03-10)
+
+
+### Bug Fixes
+
+* **prefab:** robot 6R Spherical wirst empty prefab ([ef646d9](https://github.com/Preliy/Flange/commit/ef646d96310895d91aaf185dcce6abf6c9b2c7d7))
+* **samples:** add Doosan M1509 ([82cd83e](https://github.com/Preliy/Flange/commit/82cd83e202ddf60a84ee7c9b02c503bb22cf15bf))
+* **tests:** remove invalid scene ([5c0a2d6](https://github.com/Preliy/Flange/commit/5c0a2d622e20c10419d9f697492599ae66e98769))
+
 ## [1.0.3](https://github.com/Preliy/Flange/compare/v1.0.2...v1.0.3) (2025-03-09)
 
 
