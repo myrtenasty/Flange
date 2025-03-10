@@ -150,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116934485976468784}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.78, z: 0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
-    _alpha: 0
-    _a: 0
-    _d: 0
+    _name: Joint_1
+    _alpha: -1.5707964
+    _a: 0.32
+    _d: 0.78
     _theta: 0
 --- !u!114 &8540228042907376808
 MonoBehaviour:
@@ -192,13 +192,13 @@ MonoBehaviour:
   _position:
     _value: 0
   _config:
-    _name: 
+    _name: Joint_1
     _type: 0
-    _limits: {x: -180, y: 180}
+    _limits: {x: -170, y: 170}
     _offset: 0
     _factor: 1
     _speedMax: 100
-    _accMax: 500
+    _accMax: 1000
 --- !u!1 &6116934486356525719
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
+    _name: Base
     _alpha: 0
     _a: 0
     _d: 0
@@ -276,8 +276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116934486412322369}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: 0, w: 0.00000004371139}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -296,11 +296,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
+    _name: Flange
     _alpha: 0
     _a: 0
     _d: 0
-    _theta: 0
+    _theta: 3.1415927
 --- !u!1 &6116934486799825641
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116934486799825641}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
-    _alpha: 0
+    _name: Joint_5
+    _alpha: 1.5707964
     _a: 0
     _d: 0
     _theta: 0
@@ -369,13 +369,13 @@ MonoBehaviour:
   _position:
     _value: 0
   _config:
-    _name: 
+    _name: Joint_5
     _type: 0
-    _limits: {x: -180, y: 180}
+    _limits: {x: -120, y: 120}
     _offset: 0
-    _factor: 1
-    _speedMax: 100
-    _accMax: 500
+    _factor: -1
+    _speedMax: 120
+    _accMax: 1000
 --- !u!1 &6116934487122972661
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 6116934487122972661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -424,10 +424,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
+    _name: Joint_6
     _alpha: 0
     _a: 0
-    _d: 0
+    _d: 0.35
     _theta: 0
 --- !u!114 &6116934487122972663
 MonoBehaviour:
@@ -444,13 +444,13 @@ MonoBehaviour:
   _position:
     _value: 0
   _config:
-    _name: 
+    _name: Joint_6
     _type: 0
-    _limits: {x: -180, y: 180}
+    _limits: {x: -370, y: 370}
     _offset: 0
     _factor: 1
-    _speedMax: 100
-    _accMax: 500
+    _speedMax: 210
+    _accMax: 1000
 --- !u!1 &6116934487256213575
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,8 +477,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116934487256213575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -499,9 +499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
-    _alpha: 0
-    _a: 0
+    _name: Joint_3
+    _alpha: -1.5707964
+    _a: 0.2
     _d: 0
     _theta: 0
 --- !u!114 &6116934487256213576
@@ -519,13 +519,13 @@ MonoBehaviour:
   _position:
     _value: 0
   _config:
-    _name: 
+    _name: Joint_3
     _type: 0
-    _limits: {x: -180, y: 180}
+    _limits: {x: -180, y: 70}
     _offset: 0
     _factor: 1
-    _speedMax: 100
-    _accMax: 500
+    _speedMax: 90
+    _accMax: 1000
 --- !u!1 &6116934487570755795
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,8 +552,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116934487570755795}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.135, y: 0, z: -0.000000049612424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -574,11 +574,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
+    _name: Joint_2
     _alpha: 0
-    _a: 0
+    _a: 1.135
     _d: 0
-    _theta: 0
+    _theta: -1.5707964
 --- !u!114 &7170153071840580347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,13 +594,13 @@ MonoBehaviour:
   _position:
     _value: 0
   _config:
-    _name: 
+    _name: Joint_2
     _type: 0
-    _limits: {x: -180, y: 180}
+    _limits: {x: -65, y: 85}
     _offset: 0
     _factor: 1
-    _speedMax: 100
-    _accMax: 500
+    _speedMax: 90
+    _accMax: 1000
 --- !u!1 &6116934487665191996
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,8 +627,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116934487665191996}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 1.1825, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -649,10 +649,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config:
-    _name: 
-    _alpha: 0
+    _name: Joint_4
+    _alpha: -1.5707964
     _a: 0
-    _d: 0
+    _d: 1.1825
     _theta: 0
 --- !u!114 &6116934487665191998
 MonoBehaviour:
@@ -669,13 +669,13 @@ MonoBehaviour:
   _position:
     _value: 0
   _config:
-    _name: 
+    _name: Joint_4
     _type: 0
-    _limits: {x: -180, y: 180}
+    _limits: {x: -300, y: 300}
     _offset: 0
     _factor: 1
-    _speedMax: 100
-    _accMax: 500
+    _speedMax: 170
+    _accMax: 1000
 --- !u!1 &6182021118114886043
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8143351867532428576}
-  - component: {fileID: 8143351867532428577}
+  - component: {fileID: 1898357301734289326}
   m_Layer: 0
   m_Name: Robot Industrial Template
   m_TagString: Untagged
@@ -740,7 +740,7 @@ Transform:
   - {fileID: 6116934486356525704}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8143351867532428577
+--- !u!114 &1898357301734289326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7131964569013085704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e3956721e324f92960f8f2f2dcea8ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bfea3ef3a564ecfa4bda24703a821bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frames:
@@ -791,6 +791,11 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
+  _cartesianLimit:
+    _linearSpeed: 1
+    _linearAcc: 3
+    _rotationSpeed: 200
+    _rotationAcc: 400
 --- !u!1 &8552330229196330112
 GameObject:
   m_ObjectHideFlags: 0
