@@ -1,3 +1,11 @@
+## [1.0.5](https://github.com/Preliy/Flange/compare/v1.0.4...v1.0.5) (2025-03-12)
+
+
+### Bug Fixes
+
+* **asmdef:** add iOS, WebGL builds ([f8e2a2f](https://github.com/Preliy/Flange/commit/f8e2a2f31b7dc3fd89404f6fded3644cdf09e50c))
+* **controller:** joint state initialization ([d8ad365](https://github.com/Preliy/Flange/commit/d8ad36567d8abebe59e03ce450b41f577618cf4b))
+
 ## [1.0.4](https://github.com/Preliy/Flange/compare/v1.0.3...v1.0.4) (2025-03-10)
 
 
