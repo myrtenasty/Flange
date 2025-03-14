@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/Preliy/Flange/compare/v1.0.6...v1.0.7) (2025-03-14)
+
+
+### Bug Fixes
+
+* **workflow:** setup app token ([62d0a6b](https://github.com/Preliy/Flange/commit/62d0a6bf27f9dbfe0870bde6b8e700cd7a514e2e))
+
 ## [1.0.6](https://github.com/Preliy/Flange/compare/v1.0.5...v1.0.6) (2025-03-14)
 
 
