@@ -50,6 +50,11 @@ jobs:
           git config --global user.name preliy-bot
           git config --global user.email preliyex@gmail.com
           git checkout -B upm
+      
+      - name: Set Remote URL with GitHub App Token
+        run: |
+          git remote set-url origin https://x-access-token:${{ steps.generate_token.outputs.token }}@github.com/preliy/flange.git
+
 
       # Prep for release, hide Samples/ from Unity's compiler
       - name: Refactor/Hide Samples Folder
