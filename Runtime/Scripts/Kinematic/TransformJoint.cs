@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Preliy.Flange
 {
     [ExecuteAlways]
-    [AddComponentMenu("Robotics/Joint")]
+    [AddComponentMenu("Robotics/Transform Joint")]
     [RequireComponent(typeof(Frame))]
     [DisallowMultipleComponent]
     public class TransformJoint : MonoBehaviour, IEqualityComparer<TransformJoint>
