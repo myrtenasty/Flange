@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/Preliy/Flange/compare/v1.0.7...v1.0.8) (2025-03-14)
+
+
+### Bug Fixes
+
+* **Doosan:** Adjust DH for M1509 ([dfd432b](https://github.com/Preliy/Flange/commit/dfd432bf043af50a631405871584e786bef986e2))
+
 ## [1.0.7](https://github.com/Preliy/Flange/compare/v1.0.6...v1.0.7) (2025-03-14)
 
 
