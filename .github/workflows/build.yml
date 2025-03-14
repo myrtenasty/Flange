@@ -10,11 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Generate bot app token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.RELEASER_ID }}
+          private-key: ${{ secrets.RELEASER_PRIVATE_KEY }}
+    
       - name: Checkout
         uses: actions/checkout@v3
-        with:
+        with:          
+          token: ${{ steps.generate_token.outputs.token }}
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+
+      - name: Get bot user ID
+        id: bot-user-id
+        run: |
+          echo "user-id=$(gh api "/users/${{ steps.generate_token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
 
       - name: Semantic release
         id: semantic
@@ -24,7 +39,7 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
       
       # Recreate the UPM (Release) branch for the latest version
       - name: Create UPM Branch
@@ -103,7 +118,7 @@ jobs:
           echo Creating Release
           gh release create upm/v${{steps.semantic.outputs.new_release_version}} -t "Release ${{steps.semantic.outputs.new_release_version}}" -n "${{steps.semantic.outputs.new_release_notes}}"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
       
       # Upload package Tarball
       - name: Upload Release Artifact
@@ -112,4 +127,4 @@ jobs:
           echo Uploading Package
           gh release upload upm/v${{ steps.semantic.outputs.new_release_version }} Preliy_Flange_${{ steps.semantic.outputs.new_release_version }}.tar.gz
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
