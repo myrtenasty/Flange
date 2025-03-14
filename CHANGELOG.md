@@ -1,3 +1,12 @@
+## [1.0.6](https://github.com/Preliy/Flange/compare/v1.0.5...v1.0.6) (2025-03-14)
+
+
+### Bug Fixes
+
+* **TransformJoint:** component name ([9e015fe](https://github.com/Preliy/Flange/commit/9e015fecd303c36cefba995469e6de879c22cddf))
+* **workflow:** app key ([183255b](https://github.com/Preliy/Flange/commit/183255b17e245b2823baa81f09326b8a50954c56))
+* **workflow:** Update build.yml ([fb597fb](https://github.com/Preliy/Flange/commit/fb597fb085b3e59b6e4a040c121140f51514bf00))
+
 ## [1.0.5](https://github.com/Preliy/Flange/compare/v1.0.4...v1.0.5) (2025-03-12)
 
 
