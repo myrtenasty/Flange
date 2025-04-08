@@ -15,8 +15,8 @@ namespace Preliy.Flange
         {
             return joint.Type switch
             {
-                TransformJoint.JointType.Rotation => Create(config, angle: joint.GetValidValue(value) * Mathf.Deg2Rad),
-                TransformJoint.JointType.Displacement => Create(config, displacement: joint.GetValidValue(value)),
+                TransformJoint.JointType.Rotation => CreateRaw(config, angle: joint.GetValidValue(value) * Mathf.Deg2Rad),
+                TransformJoint.JointType.Displacement => CreateRaw(config, displacement: joint.GetValidValue(value)),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -27,13 +27,13 @@ namespace Preliy.Flange
         /// <param name="config">Frame DH config</param>
         /// <param name="angle">Joint angle [rad]</param>
         /// <param name="displacement">Joint displacement [m]</param>
-        public static Matrix4x4 Create(FrameConfig config, float angle = 0f, float displacement = 0f)
+        public static Matrix4x4 CreateRaw(FrameConfig config, float angle = 0f, float displacement = 0f)
         {
             if (float.IsNaN(angle)) angle = 0;
             var theta = angle + config.Theta;
             var d = config.D + displacement;
             var alpha = config.Alpha;
-            return Create(d, theta, config.A, alpha);
+            return CreateRaw(d, theta, config.A, alpha);
         }
         
         /// <summary>
@@ -43,7 +43,7 @@ namespace Preliy.Flange
         /// <param name="d">d offset [m]</param>
         /// <param name="a">a offset [m]</param>
         /// <param name="alpha">alpha angle [rad]</param>
-        public static Matrix4x4 Create(float d, float theta, float a, float alpha)
+        public static Matrix4x4 CreateRaw(float d, float theta, float a, float alpha)
         {
             var cosTheta = Mathf.Cos(theta);
             var sinTheta = Mathf.Sin(theta);

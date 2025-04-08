@@ -45,19 +45,7 @@ namespace Preliy.Flange
 
         private void SetValue(float value)
         {
-            var target = _config.GetValidValue(value);
-
-            switch (_config.Type)
-            {
-                case JointType.Rotation:
-                    transform.SetLocalMatrix(HomogeneousMatrix.Create(Frame.Config, target * Mathf.Deg2Rad));
-                    break;
-                case JointType.Displacement:
-                    transform.SetLocalMatrix(HomogeneousMatrix.Create(Frame.Config, 0f, target));
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            transform.SetLocalMatrix(HomogeneousMatrix.Create(Frame.Config, Config, value));
             
 #if UNITY_EDITOR
             if (!Application.isPlaying) UnityEditor.EditorUtility.SetDirty(this);

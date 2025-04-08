@@ -24,7 +24,7 @@ namespace Preliy.Flange.Editor.Tests
             gameObjectJoint.transform.SetLocalPositionAndRotation(position, rotation);
 
             _expectedMatrix = gameObjectJoint.transform.GetMatrixLocal();
-            var result = HomogeneousMatrix.Create(frameConfig);
+            var result = HomogeneousMatrix.CreateRaw(frameConfig);
 
             AssertExtension.AssertEqualMatrix(result, _expectedMatrix);
         }
@@ -44,7 +44,7 @@ namespace Preliy.Flange.Editor.Tests
             gameObjectJoint.transform.SetLocalPositionAndRotation(position, rotation);
 
             _expectedMatrix = gameObjectJoint.transform.GetMatrixLocal();
-            var result = HomogeneousMatrix.Create(frameConfig, 90f * Mathf.Deg2Rad);
+            var result = HomogeneousMatrix.CreateRaw(frameConfig, 90f * Mathf.Deg2Rad);
 
             AssertExtension.AssertEqualMatrix(result, _expectedMatrix);
         }
@@ -64,7 +64,7 @@ namespace Preliy.Flange.Editor.Tests
             gameObjectJoint.transform.SetLocalPositionAndRotation(position, rotation);
 
             _expectedMatrix = gameObjectJoint.transform.GetMatrixLocal();
-            var result = HomogeneousMatrix.Create(frameConfig, 0f, 1f);
+            var result = HomogeneousMatrix.CreateRaw(frameConfig, 0f, 1f);
 
             AssertExtension.AssertEqualMatrix(result, _expectedMatrix);
         }
@@ -84,7 +84,7 @@ namespace Preliy.Flange.Editor.Tests
             gameObjectJoint.transform.SetLocalPositionAndRotation(position, rotation);
 
             _expectedMatrix = gameObjectJoint.transform.GetMatrixLocal();
-            var result = HomogeneousMatrix.Create(frameConfig, 90f * Mathf.Deg2Rad, 1f);
+            var result = HomogeneousMatrix.CreateRaw(frameConfig, 90f * Mathf.Deg2Rad, 1f);
 
             AssertExtension.AssertEqualMatrix(result, _expectedMatrix);
         }

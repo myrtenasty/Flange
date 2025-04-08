@@ -109,9 +109,9 @@ namespace Preliy.Flange
                 _theta[2] = PI * 0.5f + _link2Delta - _alpha;
             }
 
-            _t01 = HomogeneousMatrix.Create(_frames[1].Config, _joints[0].Config, _theta[0] * Rad2Deg);
-            _t12 = HomogeneousMatrix.Create(_frames[2].Config, _joints[1].Config, _theta[1] * Rad2Deg);
-            _t23 = HomogeneousMatrix.Create(_frames[3].Config, _joints[2].Config, _theta[2] * Rad2Deg);
+            _t01 = HomogeneousMatrix.CreateRaw(_frames[1].Config, _theta[0]);
+            _t12 = HomogeneousMatrix.CreateRaw(_frames[2].Config, _theta[1]);
+            _t23 = HomogeneousMatrix.CreateRaw(_frames[3].Config, _theta[2]);
             _t03 = _t01 * _t12 * _t23;
             _t36 = _t03.inverse * target;
 
@@ -238,15 +238,15 @@ namespace Preliy.Flange
             {
                 if (float.IsNaN(_theta[i])) return IKSolution.IKSolutionNaN;
                 theta[i] *= Rad2Deg;
+                theta[i] -= _joints[i].Config.Offset;
                 theta[i] = theta[i].Round(3);
             }
             
             var jointTarget = new JointTarget(theta);
 
+            //Validation
             for (var i = 0; i < theta.Length; i++)
             {
-                theta[i] = theta[i].Round(3);
-
                 if (!_joints[i].IsInRange(theta[i]))
                 {
                     return new IKSolution($"Joint {i + 1} value {theta[i]} is out of range [{_joints[i].Config.Limits.ToString()}]");

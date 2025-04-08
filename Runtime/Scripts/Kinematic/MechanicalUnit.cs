@@ -169,12 +169,12 @@ namespace Preliy.Flange
             {
                 if (value is null) throw new ArgumentNullException(nameof(value));
                 
-                var result = HomogeneousMatrix.Create(_frames.First().Config);
+                var result = HomogeneousMatrix.CreateRaw(_frames.First().Config);
                 for (var i = 0; i < _joints.Count; i++)
                 {
                     result *= HomogeneousMatrix.Create(_frames[i+1].Config, _joints[i].Config, value[i]);
                 }
-                result *= HomogeneousMatrix.Create(_frames.Last().Config);
+                result *= HomogeneousMatrix.CreateRaw(_frames.Last().Config);
                 return result;
             }
             catch (Exception exception)
