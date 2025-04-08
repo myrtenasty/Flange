@@ -58,15 +58,15 @@ namespace Preliy.Flange
             _accMax = accMax;
         }
         
-        public bool IsInRange(float angle)
+        public bool IsInRange(float value)
         {
-            return angle >= Limits.x && angle <= Limits.y;
+            return value >= Limits.x && value <= Limits.y;
         }
 
         public float GetValidValue(float value)
         {
             value = Mathf.Clamp(value, _limits.x, _limits.y);
-            return _offset + value * _factor;
+            return (value + _offset) * _factor;
         }
         
         public static JointConfig Default => new (TransformJoint.JointType.Rotation, new Vector2(-180, 180), 0, 1f, 100f,500f);

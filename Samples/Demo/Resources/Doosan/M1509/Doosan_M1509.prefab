@@ -141,7 +141,7 @@ MonoBehaviour:
       _robJoint:
         _r1: 0
         _r2: 0
-        _r3: 0
+        _r3: 90
         _r4: 0
         _r5: 0
         _r6: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
       _robJoint:
         _r1: 0
         _r2: 0
-        _r3: 0
+        _r3: 90
         _r4: 0
         _r5: 0
         _r6: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   _config:
     _name: Joint_1
     _type: 0
-    _limits: {x: -170, y: 170}
+    _limits: {x: -360, y: 360}
     _offset: 0
     _factor: 1
     _speedMax: 100
@@ -536,7 +536,7 @@ MonoBehaviour:
   _config:
     _name: Joint_5
     _type: 0
-    _limits: {x: -120, y: 120}
+    _limits: {x: -360, y: 360}
     _offset: 0
     _factor: -1
     _speedMax: 120
@@ -611,7 +611,7 @@ MonoBehaviour:
   _config:
     _name: Joint_6
     _type: 0
-    _limits: {x: -370, y: 370}
+    _limits: {x: -360, y: 360}
     _offset: 0
     _factor: 1
     _speedMax: 210
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   _config:
     _name: Joint_4
     _type: 0
-    _limits: {x: -300, y: 300}
+    _limits: {x: -360, y: 360}
     _offset: 0
     _factor: 1
     _speedMax: 170
@@ -1516,8 +1516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5002468663665371294}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0.0345, z: -0}
+  m_LocalRotation: {x: -0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.0345, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1542,7 +1542,7 @@ MonoBehaviour:
     _alpha: -1.5707964
     _a: 0
     _d: 0.0345
-    _theta: -1.5707964
+    _theta: 0
 --- !u!114 &5829988293625726287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,12 +1556,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _position:
-    _value: 0
+    _value: 90
   _config:
     _name: Joint_3
     _type: 0
-    _limits: {x: -180, y: 70}
-    _offset: 90
+    _limits: {x: -150, y: 150}
+    _offset: -90
     _factor: 1
     _speedMax: 90
     _accMax: 1000
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   _config:
     _name: Joint_2
     _type: 0
-    _limits: {x: -65, y: 85}
+    _limits: {x: -360, y: 360}
     _offset: 0
     _factor: 1
     _speedMax: 90

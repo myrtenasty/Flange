@@ -79,7 +79,7 @@ namespace Preliy.Flange
         {
             var solutionIndex = Clamp(configuration.Index, 0, DEFAULT_SOLUTIONS_COUNT - 1);
 
-            _t56 = HomogeneousMatrix.Create(_frames[6].Config);
+            _t56 = HomogeneousMatrix.CreateRaw(_frames[6].Config);
             _t5 = target * _t56.inverse;
 
             _p05 = _t5.GetPosition();
@@ -91,7 +91,7 @@ namespace Preliy.Flange
             _theta[0] = solutionIndex < 4 ? _psi + _phi + PI * 0.5f : _psi - _phi + PI * 0.5f;
 
             //THETA5
-            _t01 = HomogeneousMatrix.Create(_frames[1].Config, _joints[0].Config, _theta[0] * Rad2Deg);
+            _t01 = HomogeneousMatrix.CreateRaw(_frames[1].Config, _theta[0]);
             _t16 = _t01.inverse * target;
             _theta[4] = -Acos((_t16.m13 - _frames[4].Config.D) / _frames[6].Config.D);
             if (InverseIndex.Contains(solutionIndex)) _theta[4] *= -1;
@@ -109,8 +109,8 @@ namespace Preliy.Flange
             }
 
             //THETA3
-            _t56 = HomogeneousMatrix.Create(_frames[6].Config, _joints[5].Config, _theta[5] * Rad2Deg);
-            _t45 = HomogeneousMatrix.Create(_frames[5].Config, _joints[4].Config, _theta[4] * Rad2Deg);
+            _t56 = HomogeneousMatrix.CreateRaw(_frames[6].Config, _theta[5]);
+            _t45 = HomogeneousMatrix.CreateRaw(_frames[5].Config, _theta[4]);
             _t14 = _t16 * _t56.inverse * _t45.inverse;
             _p3Dist = _t14.GetPosition();
             _p13Dist = Sqrt(Pow(_p3Dist.z, 2) + Pow(_p3Dist.x, 2));
@@ -121,8 +121,8 @@ namespace Preliy.Flange
             _theta[1] = Atan2(-_p3Dist.z, -_p3Dist.x) - Asin(-_frames[3].Config.A * Sin(_theta[2]) / _p13Dist) - PI * 0.5f;
 
             //THETA4
-            _t23 = HomogeneousMatrix.Create(_frames[3].Config, _joints[2].Config, _theta[2] * Rad2Deg);
-            _t12 = HomogeneousMatrix.Create(_frames[2].Config, _joints[1].Config, _theta[1] * Rad2Deg);
+            _t23 = HomogeneousMatrix.CreateRaw(_frames[3].Config, _theta[2]);
+            _t12 = HomogeneousMatrix.CreateRaw(_frames[2].Config, _theta[1]);
             _t34 = _t23.inverse * _t12.inverse * _t14;
             _theta[3] = Atan2(-_t34.m22, -_t34.m02) + PI * 0.5f;
 
@@ -217,6 +217,7 @@ namespace Preliy.Flange
             {
                 if (float.IsNaN(_theta[i])) return IKSolution.IKSolutionNaN;
                 theta[i] *= Rad2Deg;
+                theta[i] -= _joints[i].Config.Offset;
                 theta[i] = theta[i].Round(3);
             }
             

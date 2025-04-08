@@ -144,6 +144,7 @@ namespace Preliy.Flange
         /// <param name="jointTarget">Target joint values</param>
         public Configuration GetConfiguration(JointTarget jointTarget)
         { 
+            //TODO Not tested
             var configuration = _controller.Configuration.Value;
             configuration.SetIndex(_controller.MechanicalGroup.GetConfigurationIndex(jointTarget));
             return configuration;
@@ -154,6 +155,7 @@ namespace Preliy.Flange
         /// </summary>
         public Configuration GetConfiguration()
         {
+            //TODO Not tested
             var configuration = _controller.Configuration.Value;
             configuration.SetIndex(_controller.MechanicalGroup.GetConfigurationIndex());
             return configuration;

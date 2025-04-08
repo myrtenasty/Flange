@@ -29,7 +29,7 @@ namespace Preliy.Flange
 
         private void SetTransform()
         {
-            transform.SetLocalMatrix(HomogeneousMatrix.Create(_config));
+            transform.SetLocalMatrix(HomogeneousMatrix.CreateRaw(_config));
         }
     }
 }
