@@ -1,3 +1,12 @@
+## [1.0.9](https://github.com/Preliy/Flange/compare/v1.0.8...v1.0.9) (2025-04-08)
+
+
+### Bug Fixes
+
+* **Demo:** Doosan M1509 joint config offset ([26c64f6](https://github.com/Preliy/Flange/commit/26c64f637389117f1e2c1a97a230677b439943ae))
+* **Demo:** KUKA Samples ([e78a250](https://github.com/Preliy/Flange/commit/e78a250b6e0060d48c8a08553794f0f1c968eda0))
+* joint config offset ([f34cdc4](https://github.com/Preliy/Flange/commit/f34cdc41578d6b38a03e442c7c1f58ef45daadd4))
+
 ## [1.0.8](https://github.com/Preliy/Flange/compare/v1.0.7...v1.0.8) (2025-03-14)
 
 
